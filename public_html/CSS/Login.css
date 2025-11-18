@@ -1,0 +1,121 @@
+
+.pagina4{
+    text-align: center;
+    font-size: 1em;
+    border: 2px solid grey;
+    padding: 15px;
+    background-color:gold;
+    margin-top: 0;
+    font-family: arial;
+    font-weight: 800;
+    border-radius: 10px;
+    margin-right:0;
+    display: flex;
+}
+
+.fondo5{
+    margin: 0;
+    padding: 50px;
+    background-color: grey;
+}
+/* --- Estilos del Contenedor --- */
+.contenedor-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Esto ayuda a centrar el formulario en la página */
+    min-height: 80vh; 
+}
+
+/* --- Estilos del Formulario --- */
+.formulario-login {
+    width: 400px;
+    max-width: 90%;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-titulo {
+    font-size: 2em;
+    color: green; /* Usa el color de acento de tu proyecto */
+    margin-bottom: 30px;
+}
+
+/* Contenedor para el input y label (similar al que usaste en Contactos) */
+.grupo-input {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.login-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Asegura que el padding no añada ancho extra */
+    font-size: 1em;
+}
+
+/* Botón de Ingreso */
+.login-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.login-submit:hover {
+    background-color: #229797;
+}
+
+/* Enlaces de registro y olvido */
+.enlace-olvido, .enlace-registro {
+    font-size: 0.9em;
+    margin-top: 15px;
+}
+
+.enlace-registro a, .enlace-olvido a {
+    color: green;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/*----------------------------------PIE DE PAGINA -------------------------*/
+.pie {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+}
+.fondo_pie{
+    background:white;
+    padding: 10px;
+}
+
+.contenedor-redes a {
+    color: black;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.contenedor-redes a:hover {
+    color: green;
+}
+/*----------------------------------*/
+

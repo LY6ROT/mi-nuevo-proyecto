@@ -1,0 +1,674 @@
+header{
+    background-color: gold;
+}/* --- ESTILOS GENERALES Y FUENTE PRINCIPAL --- */
+
+
+
+
+
+
+
+
+
+
+
+/* --- ESTILOS BASE --- */
+
+.main-nav {
+    /* ... (asegúrate de que el display: flex; esté en el main-nav) */
+    position: relative;
+    max-width: none; /* Asegura que la barra ocupe todo el ancho */
+}
+
+/* Ocultar el botón hamburguesa por defecto en escritorio */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* --- ESTILOS DEL MENÚ LATERAL (SIDE-MODAL) --- */
+
+.side-modal-fondo {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    overflow: hidden;
+}
+
+.side-modal-contenido {
+    background-color: #fefefe;
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inicialmente fuera de la pantalla a la derecha */
+    width: 300px; /* Ancho del menú lateral */
+    height: 100%;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease-out; /* Transición para el deslizamiento */
+    
+    /* Estructura interna */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estado ACTIVO: Mueve el menú a la pantalla */
+.side-modal-fondo.activo .side-modal-contenido {
+    right: 0; 
+}
+
+/* Botón de cerrar 'x' */
+.modal-cerrar {
+    color: #333;
+    align-self: flex-end;
+    font-size: 35px; 
+    font-weight: bold;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin: 0 0 15px auto; /* Lo empuja a la esquina superior derecha */
+}
+
+/* Contenido interno y enlaces del menú */
+.menu-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-logo {
+    color: var(--gymmax-dark); /* O el color del logo de Smart Fit */
+    font-weight: bold;
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.modal-action-btn {
+    background-color: var(--gymmax-yellow); /* Color amarillo fuerte */
+    color: var(--gymmax-dark);
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.modal-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.modal-links li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-links a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.menu-footer {
+    margin-top: auto; /* Empuja el footer hacia abajo */
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
+/* --- MEDIA QUERY: Mostrar hamburguesa y ocultar links en móvil --- */
+@media (max-width: 800px) {
+    .nav-desktop {
+        /* Oculta los enlaces de navegación tradicionales */
+        display: none; 
+    }
+    
+    .hamburger-btn {
+        /* Muestra el botón hamburguesa */
+        display: block; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+    /* Se define la fuente principal aquí para no repetirla */
+    font-family: "poppins", sans-serif;
+    background-position: center;
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-attachment: fixed; /* Mantiene el fondo estático al hacer scroll */
+    margin: 0; /* Es buena práctica resetear el margen del body */
+    padding: 0;
+    background-color: gold;
+
+
+}
+.fondo2{
+    margin: 0;
+    padding: 100px;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/026/781/389/non_2x/gym-interior-background-of-dumbbells-on-rack-in-fitness-and-workout-room-photo.jpg)
+}
+
+.pagina1 {
+
+    text-align: center;
+    font-size: 1em;
+    border: 2px solid gold;
+    padding: 15px;
+    background-color:yellow;
+    margin-top: 0;
+    font-family: arial;
+    font-weight: 800;
+    border-radius: 10px;
+    margin-right:0;
+    display: flex;
+
+
+
+}
+/* --- ENCABEZADO Y NAVEGACIÓN --- */
+
+
+.estilos_menu {
+    text-align: center;
+    font-size: 24px;
+    padding-bottom: 20px;
+
+
+
+}
+
+ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    list-style: none;
+    padding: 30px;
+    background-color: black;
+
+
+    /* Hacemos el menú flexible y centrado */
+    max-width: 100%;
+    margin: 0 auto;
+
+    /* Usamos 'gap' para espaciar los elementos, es más moderno y flexible */
+    gap: 60px;
+
+}
+
+a {
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+a:hover {
+    color: gold;
+    background-color: #333;
+}
+/*-----------------------------------CARRUSEL----------------------*/
+.carousel-container {
+    width: 100%;
+    max-width: 2350px; /* MÁS LARGO */
+    height: 250px; /* un poco más pequeño para ver más imágenes */
+    overflow: hidden;
+    margin: auto;
+    border-radius: 12px;
+    background-color: gold;
+    margin-left: 80px;
+}
+
+.carousel-track {
+    
+    display: flex;
+    animation: scroll 35s linear infinite; /* más lento */
+}
+
+/* Cada imagen ocupa menos espacio para que entren más */
+.carousel-track img {
+    width: 600px;  /* AJUSTA ESTE VALOR PARA VER MÁS O MENOS IMÁGENES */
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px; /* separación entre imágenes */
+    border-radius: 10px;
+}
+
+/* Animación continua */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/*-----------------------------------*/
+
+
+
+/* --- SECCIONES DE CONTENIDO --- */
+.estilos_descripcion {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    text-shadow: 10px 10px 10px black;
+    font-size: 25px;
+    border-top: 2px solid black;
+    background-image: url(https://i.etsystatic.com/29035216/r/il/1896b4/3640388697/il_570xN.3640388697_ixlf.jpg);
+    background-position: center;
+    background-size: cover;
+
+}
+/* --- Definición de la Animación con @keyframes --- */
+@keyframes fadeIn {
+    /* Estado inicial: El elemento está invisible y 30px más arriba de su posición final. */
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    /* Estado final: El elemento es completamente visible y está en su posición normal. */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gimnasios {
+    text-align: center;
+    background-color: darkcyan;
+    border-radius: 7px;
+    border: 2px solid black;
+    font-size: 1.5em;
+    padding: 0px 20px;
+    text-shadow:2px 2px 5px black;
+    animation: fadeIn 1s ease-out;
+    /* Usamos max-width y margin:auto para centrar y hacerlo responsivo */
+    max-width: 300px;
+    margin: 40px auto;
+    color: white;
+}
+
+/* --- TARJETAS DE GIMNASIOS (CARDS) --- */
+.fila_1 {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 30px;
+    border: 2px solid black;
+
+
+    /* Hacemos la tarjeta flexible y adaptable */
+    max-width: 500px;
+    margin: 40px auto;
+
+    /* Efectos y transiciones */
+    transition: transform 0.4s, box-shadow 0.4s;
+    cursor: pointer;
+
+
+
+}
+
+.fila_1:hover {
+    transform: scale(1.05); /* Escalar un poco hacia afuera */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25); /* Sombra para darle profundidad */
+}
+
+/* Evita que el enlace de la tarjeta tenga el efecto hover del menú */
+.fila_1 a:hover {
+    background-color: transparent;
+    color: inherit;
+}
+
+.caja img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+.pf_titulo {
+    border: 2px solid black;
+    background-color: gold;
+    border-radius: 20px;
+    color: black;
+    padding: 8px 0;
+    max-width: 300px;
+    margin: 30px auto;
+    font-size: 1.3em;
+}
+
+.parrafo_1 {
+    font-size: 1em;
+    color: black;
+}
+
+.ubicaciones{
+    font-size: 0.9em;
+    color: gold;
+    background-color: gold;
+    border: 1px solid black;
+
+}
+
+.video-responsive {
+    /* Define un contenedor para mantener la relación de aspecto 16:9 */
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    margin: 20px auto; /* Para centrarlo */
+    max-width: 800px; /* Limita el ancho máximo */
+}
+
+.video-responsive iframe {
+    /* Fuerza al iframe a ocupar el 100% del contenedor con la altura definida */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.contenedor-gimnasios{
+
+    display: grid;
+    /* Esta línea es la clave: 3 columnas, una al lado de la otra */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    /* Otras propiedades para centrar y limitar el ancho */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+
+
+}
+
+
+hr {
+    border: 1px solid #ccc;
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+
+/* --- ESTILOS PARA PANTALLAS PEQUEÑAS (MEDIA QUERIES) --- */
+
+@media (max-width: 720px) {
+    
+
+    
+    
+    /*-----------------------------------CARRUSEL----------------------*/
+.carousel-container {
+    width: 100%;
+    max-width: 600px; /* MÁS LARGO */
+    height: 220px; /* un poco más pequeño para ver más imágenes */
+    overflow: hidden;
+    margin: auto;
+    border-radius: 12px;
+    background-color: white;
+    
+    
+}
+
+.carousel-track {
+    
+    display: flex;
+    animation: scroll 15s linear infinite; /* más lento */
+}
+
+/* Cada imagen ocupa menos espacio para que entren más */
+.carousel-track img {
+    width: 200px;  /* AJUSTA ESTE VALOR PARA VER MÁS O MENOS IMÁGENES */
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10px; /* separación entre imágenes */
+    border-radius: 10px;
+}
+
+/* Animación continua */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/*-----------------------------------*/
+    
+    .contenedor-gimnasios{
+
+        /* Fuerza a que haya una sola columna, apilando las tarjetas una debajo de la otra. */
+        grid-template-columns: 1fr;
+
+        /* Asegura que el contenedor ocupe casi todo el ancho de la pantalla del celular. */
+        width: 95%;
+        max-width: none;
+
+        /* Ajusta el margen si es necesario */
+        margin: 20px auto;
+        padding: 0 10px; /* Pequeño padding a los lados */
+
+
+
+    }
+
+    /* Hacemos la fuente del título principal más pequeña */
+    .pagina1 {
+        font-size: 3em;
+        border-width: 4px;
+        margin: 50%
+
+    }
+
+    /* Cambiamos el menú de navegación para que sea vertical */
+    ul {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        gap: 20px; /* Reducimos el espacio entre ellos */
+        padding: 0 250px 20px ;
+        max-width: 20%; /* Hacemos que ocupe casi todo el ancho */
+    }
+
+    /* Ajustamos el título de la sección de gimnasios */
+    .gimnasios {
+        font-size: 1.2em;
+        max-width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    }
+
+    /* Ajustamos las tarjetas de los gimnasios */
+    .fila_1 {
+        max-width: 90%; /* También ocupará el 90% del ancho */
+        padding: 15px;
+        margin: 20px auto; /* Reducimos el margen vertical */
+
+    }
+
+    /* Hacemos el título de la tarjeta un poco más pequeño */
+    .pf_titulo {
+        font-size: 1em;
+    }
+
+    /* Reducimos el tamaño del párrafo de la tarjeta */
+    .parrafo_1 {
+        font-size: 0.8em;
+    }
+    .m1{
+        max-width: 100%;
+    }
+    .estilos_descripcion{
+        flex-direction: column; /* Apila los elementos verticalmente */
+        gap: 15px; /* Reducimos el espacio entre ellos */
+        padding: 20px;
+        max-width: 90%; /* Hacemos que ocupe casi todo el ancho */
+    }
+}
+
+.ubicaciones{
+    color: black;
+    font-size: 0.8em;
+
+}
+/*----------------------------------PIE DE PAGINA -------------------------*/
+.pie {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+}
+.fondo_pie{
+    background:white;
+    padding: 10px;
+}
+
+.contenedor-redes a {
+    color: black;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.contenedor-redes a:hover {
+    color: green;
+}
+/*----------------------------------*/
+
+
+/* --- CONTENEDOR FLEXIBLE --- */
+.contenedor-botones-lima {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    flex-wrap: wrap; /* Permite que los botones salten de línea en pantallas pequeñas */
+    gap: 25px; /* Espacio entre los botones */
+    padding: 30px 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* --- ESTILO BASE DE CADA BOTÓN (<a>) --- */
+.boton-lima {
+    display: flex;
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center;
+
+    /* Dimensiones y forma */
+    width: 140px; /* Ancho fijo para mantener la forma de tarjeta */
+    height: 140px;
+    border-radius: 20px; /* Bordes redondeados */
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: black; /* Color del texto y el icono */
+
+    /* Efecto visual */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boton-lima:hover {
+    transform: translateY(-5px); /* Pequeño movimiento hacia arriba al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ESTILOS DEL ICONO --- */
+.boton-lima i {
+    font-size: 3em; /* Tamaño grande del icono */
+    margin-bottom: 5px;
+}
+
+/* --- ESTILOS DEL TEXTO (Etiqueta) --- */
+.etiqueta-lima {
+    font-family: 'Poppins', sans-serif; /* Puedes usar Poppins para el texto del botón */
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 5px;
+}
+
+
+/* --- COLORES DE FONDO (Similar a tu imagen de referencia) --- */
+
+.color-norte {
+    background-color: darkcyan; /* Azul (Similar a 'Mejor') */
+    color: white; /* Texto blanco para mejor contraste */
+}
+
+.color-este {
+    background-color: darkred; /* Verde (Similar a 'Último') */
+    color: white;
+}
+
+.color-sur {
+    background-color: darkorchid; /* Morado (Similar a 'Popular') */
+    color: white;
+}
+
+.color-centro {
+    background-color: darkorange; /* Naranja (Similar a 'Más') */
+    color: white;
+}
+
+.color-moderna {
+    background-color: darkblue; /* Rojo para el quinto elemento */
+    color: white;
+}
+.boton_detalle{
+    background-color: green;
+    width: 100px;
+    font-size: 0.9em;
+    font-family: poppins;
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* --- RESPONSIVE DESIGN (Para que se vean bien en móvil) --- */
+@media (max-width: 720px) {
+
+
+    .contenedor-botones-lima {
+        gap: 15px; /* Reduce el espacio en móvil */
+    }
+    .boton-lima {
+        width: 120px;
+        height: 120px;
+    }
+    .boton-lima i {
+        font-size: 2.5em;
+    }
+}

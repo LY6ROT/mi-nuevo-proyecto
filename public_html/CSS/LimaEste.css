@@ -1,0 +1,54 @@
+header{
+    background-color: gold;
+}/* --- ESTILOS GENERALES Y FUENTE PRINCIPAL --- */
+
+
+body {
+    /* Se define la fuente principal aquí para no repetirla */
+    font-family: "poppins", sans-serif;
+    background-position: center;
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-attachment: fixed; /* Mantiene el fondo estático al hacer scroll */
+    margin: 0; /* Es buena práctica resetear el margen del body */
+    padding: 0;
+    background-color: white;
+    
+        
+}
+.gimnasios2{
+    text-align: center;
+    background-color: red;
+    border-radius: 7px;
+    border: 2px solid black;
+    font-size: 1.5em;
+    padding: 0px 20px;
+    text-shadow:2px 2px 5px black;
+    animation: fadeIn 1s ease-out;
+    /* Usamos max-width y margin:auto para centrar y hacerlo responsivo */
+    max-width: 300px;
+    margin: 40px auto;
+    color: white;
+}
+
+/*----------------------------------PIE DE PAGINA -------------------------*/
+.pie {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+}
+.fondo_pie{
+    background:white;
+    padding: 100px;
+}
+
+.contenedor-redes a {
+    color: black;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.contenedor-redes a:hover {
+    color: green;
+}
+/*----------------------------------*/

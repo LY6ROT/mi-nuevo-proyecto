@@ -1,0 +1,277 @@
+/* ============================================= */
+/* --- 1. VARIABLES GLOBALES Y RESETEO --- */
+/* ============================================= */
+
+:root {
+    --color-primario: #008000; /* Verde principal */
+    --color-acento: #FFD700; /* Dorado */
+    --color-texto: #333333;
+    --color-texto-secundario: #555;
+    --color-blanco: #FFFFFF;
+    --color-gris-borde: #ddd;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    --color-overlay: rgba(0, 0, 0, 0.6);
+    --color-fondo: #F9F9F9; /* Añadido para consistencia */
+    --color-gris-claro: #f0f0f0; /* Añadido para consistencia */
+    --font-titulo: 'Poppins', sans-serif;
+    --transicion: all 0.3s ease;
+}
+
+/* Reseteo Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transicion);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ============================================= */
+/* --- 2. HEADER Y NAVEGACIÓN (Layout) --- */
+/* ============================================= */
+
+.main-header {
+    background-color: var(--color-blanco);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-gris-borde);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px var(--color-sombra);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-titulo);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    line-height: 1;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.nav-desktop ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-desktop ul a {
+    font-family: var(--font-titulo);
+    font-weight: 600;
+    color: var(--color-texto-secundario);
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: var(--transicion);
+    position: relative;
+    /* (Estilos de línea inferior active/hover se omiten por brevedad) */
+}
+
+/* Íconos y Carrito Badge */
+.nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 2rem;
+}
+
+.nav-icons .icon-btn {
+    font-size: 1.4rem;
+    color: var(--color-texto);
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -12px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.nav-mobile-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .nav-desktop {
+        display: none;
+    }
+    .nav-mobile-toggle {
+        display: block;
+    }
+}
+
+
+/* ============================================= */
+/* --- 3. MODALES Y VENTANAS EMERGENTES (CARRITO / MÓVIL) --- */
+/* ============================================= */
+
+/* Overlay */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--color-overlay, rgba(0, 0, 0, 0.6));
+    z-index: 1500;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.open {
+    opacity: 1; visibility: visible;
+}
+
+/* Estilo Sidebar y Menú Móvil (Deslizamiento) */
+.cart-sidebar, .nav-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    height: 100%;
+    background-color: var(--color-blanco);
+    box-shadow: -5px 0 15px var(--color-sombra);
+    z-index: 2000;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    flex-direction: column;
+}
+.cart-sidebar {
+    width: 400px;
+    max-width: 90%;
+}
+.nav-mobile-menu {
+    width: 300px;
+    padding: 0;
+}
+.cart-sidebar.open, .nav-mobile-menu.open {
+    right: 0; /* Desliza a la vista */
+}
+
+/* --- ESTILOS INTERNOS DEL MENÚ MÓVIL (Hamburguesa) --- */
+.nav-mobile-close {
+    font-size: 2rem;
+    color: var(--color-texto);
+    cursor: pointer;
+    text-align: right;
+    padding: 1rem 1.5rem 0.5rem;
+}
+
+.nav-mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-mobile-menu ul a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--color-texto);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-gris-borde);
+}
+.nav-mobile-menu ul a:hover {
+    background-color: var(--color-gris-claro);
+}
+
+/* --- ESTILOS MEJORADOS DEL CARRITO SIDEBAR (Tu mejora visual) --- */
+.cart-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid var(--color-gris-claro);
+    background-color: var(--color-fondo);
+    flex-shrink: 0;
+}
+.cart-sidebar-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+.cart-sidebar-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem 1.5rem;
+}
+.cart-sidebar-footer {
+    padding: 1.5rem;
+    border-top: 2px solid var(--color-gris-claro);
+    background: var(--color-blanco);
+    flex-shrink: 0;
+}
+.cart-sidebar-subtotal {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.cart-sidebar-footer .btn {
+    width: 100%;
+    margin-bottom: 0.75rem;
+}
+
+/* Estilo de los Ítems del Carrito */
+.cart-sidebar-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--color-gris-borde);
+    align-items: center;
+}
+.cart-sidebar-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.cart-sidebar-item-price {
+    font-weight: bold;
+    color: var(--color-primario);
+    display: block;
+    font-size: 0.95rem;
+}
+.cart-sidebar-remove-btn {
+    color: #dc3545;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+}

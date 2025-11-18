@@ -1,0 +1,146 @@
+
+
+.pagina2 {
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid silver;
+    padding: 15px;
+    background-color:gold;
+    margin-top: 0;
+    font-family: arial;
+    font-weight: 800;
+    border-radius: 10px;
+    margin-right:0;
+    display: flex;
+}
+.fondo3{
+     margin: 0;
+    padding: 100px;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/026/781/389/non_2x/gym-interior-background-of-dumbbells-on-rack-in-fitness-and-workout-room-photo.jpg) 
+}
+
+
+/* --- ESTILOS DEL FORMULARIO --- */
+.formulario {
+    width: 500px;
+    max-width: 100%; 
+    margin: 30px auto;
+    padding: 20px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+    position: relative;
+    background-color: white;
+    
+}
+
+.formulario_titulo {
+    text-align: center;
+    font-family: poppins;
+    color: white;
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 2em;
+    background-color: green;
+    border-color:black;
+    
+}
+
+.formulario_input, .formulario_label, .formulario_submit {
+    display: block;
+    width: 90%;
+    font-size: 1em;
+   
+    
+}
+
+.formulario_input {
+    padding: 20px;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 0 auto 40px auto; 
+}
+
+.formulario_label {
+    
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -85px;
+    z-index: -20;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 0.25s;
+    
+}
+
+.formulario_input:focus {
+    outline: 1px solid rgba(7, 159, 37, 0.7);
+}
+
+.formulario_input:focus + .formulario_label {
+    margin-top: -120px;
+}
+
+.formulario_submit {
+    background: green;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    margin: 8px auto;
+}
+
+.formulario_submit:hover {
+    background: #229797;
+}
+
+/* --- ESTILOS DEL PIE DE PÁGINA Y REDES SOCIALES --- */
+.pie {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+}
+
+.contenedor-redes a {
+    color: black;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.contenedor-redes a:hover {
+    color: green;
+}
+
+
+/* --- DISEÑO RESPONSIVO --- */
+@media (max-width: 600px) {
+    .formulario {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .formulario_titulo {
+        font-size: 1.5em;
+        
+    }
+}
+/*----------------------------------PIE DE PAGINA -------------------------*/
+.pie {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+}
+.fondo_pie{
+    background:white;
+    padding: 50px;
+}
+
+.contenedor-redes a {
+    color: black;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.contenedor-redes a:hover {
+    color: green;
+}
+/*----------------------------------*/

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fit - Sede Real Plaza Centro</title> 
+    
+    <link rel="stylesheet" href="CSS/style.css"> 
+    <link rel="stylesheet" href="CSS/detalleSmartFit.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display.swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo nav-link" data-page="page-inicio">GymMax</a>
+        
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="index.html" >Inicio</a></li>
+                    <li><a href="#" class="nav-link" data-page="page-gimnasios">Gimnasios</a></li>
+                    <li><a href="#" class="nav-link" data-page="page-ofertas">Ofertas</a></li>
+                    <li><a href="#" class="nav-link" data-page="page-cuenta">Mi Cuenta</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-icons">
+                <i class="fa-solid fa-search icon-btn" id="global-search-btn"></i>
+            
+                <div class="cart-icon-wrapper icon-btn" id="cart-sidebar-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cart-badge-count">0</span>
+                </div>
+                <i class="fa-solid fa-bars nav-mobile-toggle" id="mobile-menu-toggle"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="detalle-main-container">
+
+        <h1 id="gym-nombre-principal" class="section-title">Smart Fit - Sede Real Plaza Centro</h1>
+        <hr class="detalle-divider">
+
+        <section id="detalle-content-container">
+            
+            <section class="encabezado-oferta">
+                <div class="info-principal">
+                    <p class="slogan">Tu vida más saludable comienza en el entrenamiento y continúa con acciones para ayudar al planeta y la sociedad.</p>
+                </div>
+                <div class="oferta-banner">
+                    <h2>¡Primer Mes Gratis!</h2>
+                    <p>Aplica al Plan Black con permanencia de 12 meses.</p>
+                    <button class="btn-inscripcion">Inscríbete Ahora</button>
+                </div>
+            </section>
+
+            <section class="detalles-grid">
+                
+                <div class="grid-item item-horarios">
+                    <h3>Horarios y Contacto</h3>
+                    <ul class="lista-horarios">
+                        <li><i class="fa-regular fa-clock"></i> Lunes a Viernes: 6:00 AM - 11:00 PM</li>
+                        <li><i class="fa-regular fa-clock"></i> Sábados: 8:00 AM - 8:00 PM</li>
+                        <li><i class="fa-solid fa-phone"></i> Contacto: (01) 555-5555</li>
+                        <li><i class="fa-solid fa-map-location-dot"></i> Ubicación: Av. Principal 123</li>
+                    </ul>
+                </div>
+
+                <div class="grid-item item-precios">
+                    <h3>Planes Destacados</h3>
+                    <div class="planes-flex">
+                        <div class="tarjeta-plan plan-black">
+                            <h4>Plan Black</h4>
+                            <p>S/ 99.90 / mes</p>
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> Acceso multi-sede</li>
+                                <li><i class="fa-solid fa-check"></i> Traer un invitado</li>
+                            </ul>
+                        </div>
+                        <div class="tarjeta-plan plan-smart">
+                            <h4>Plan Smart</h4>
+                            <p>S/ 69.90 / mes</p>
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i> Acceso a sede única</li>
+                                <li><i class="fa-solid fa-xmark"></i> Sin invitados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-item item-galeria">
+                    <h3>Galería e Instalaciones</h3>
+                    <img src="https://pictures.smartfit.com.br/16233/big/fbb14ca2a3beaf754825beca8ded9e8c.jpeg?1734629363" alt="Instalaciones del gimnasio SmartFit" class="galeria-img">
+                </div>
+                
+            </section>
+
+            <section class="caracteristicas-flex">
+                <h2>Servicios e Instalaciones</h2>
+                <div class="servicios-listado">
+                    <div class="servicio-card"><i class="fa-solid fa-dumbbell"></i> Peso Libre</div>
+                    <div class="servicio-card"><i class="fa-solid fa-person-running"></i> Cardio</div>
+                    <div class="servicio-card"><i class="fa-solid fa-shirt"></i> Vestuarios</div>
+                    <div class="servicio-card"><i class="fa-solid fa-heart-pulse"></i> SmartBox</div>
+                    <div class="servicio-card"><i class="fa-solid fa-lock"></i> Lockers</div>
+                </div>
+            </section>
+            
+        </section>
+        
+    </main>
+    
+    <div class="modal-overlay" id="modal-overlay"></div>
+    
+    <div class="nav-mobile-menu" id="mobile-menu">
+        <i class="fa-solid fa-times nav-mobile-close" id="mobile-menu-close"></i>
+        <ul>
+            <li><a href="#" class="nav-link" data-page="page-inicio">Inicio</a></li>
+            <li><a href="#" class="nav-link" data-page="page-gimnasios">Gimnasios</a></li>
+            <li><a href="#" class="nav-link" data-page="page-ofertas">Ofertas</a></li>
+            <li><a href="#" class="nav-link" data-page="page-cuenta">Mi Cuenta</a></li>
+        </ul>
+    </div>
+    
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-sidebar-header">
+            <h2>Tu Carrito</h2>
+            <button class="modal-close-btn" data-close-modal="cart-sidebar"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <div class="cart-sidebar-body" id="cart-sidebar-items">
+            <p style="padding: 1rem; text-align: center;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-sidebar-footer">
+            <div class="cart-sidebar-subtotal">
+                <span>Subtotal:</span>
+                <span id="cart-sidebar-subtotal">S/ 0.00</span>
+            </div>
+            <button class="btn btn-primario nav-link" data-page="page-carrito">Ver Carrito Completo</button>
+            <button class="btn btn-secundario">Ir a Pagar</button>
+        </div>
+    </div>
+    
+    <script src="JS/detalleSmartFit.js" defer></script> 
+    <script src="JS/carrito.js" type="text/javascript"></script>
+    
+    
+    
+
+
+
+</body>
+</html>

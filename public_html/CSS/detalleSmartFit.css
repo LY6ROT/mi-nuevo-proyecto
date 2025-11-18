@@ -1,0 +1,230 @@
+/* --- 1. IMPORTACIÓN DE FUENTE (Poppins) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display.swap');
+
+/* --- VARIABLES DE COLOR SMARTFIT --- */
+:root {
+    --color-smart-primary: #FFC932; /* Amarillo/Dorado */
+    --color-smart-secondary: #004C99; /* Azul Oscuro */
+    --color-smart-text-dark: #333333;
+    --color-smart-background: #F0F2F5; /* Fondo de la sección */
+    --color-smart-card-bg: #FFFFFF;
+    --color-smart-shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* 2. CONTENEDOR PRINCIPAL Y BASE */
+.detalle-main-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: var(--color-smart-card-bg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Sombra profesional */
+    border-radius: 12px;
+}
+
+#gym-nombre-principal {
+    color: var(--color-smart-secondary);
+    font-weight: 700;
+}
+
+/* Estilos de botones */
+.btn-inscripcion {
+    background-color: var(--color-smart-primary);
+    color: var(--color-smart-text-dark);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-top: 15px; 
+}
+
+/* ------------------------------------------------------------------- */
+/* SECCIÓN 1: ENCABEZADO Y OFERTA (FLEXBOX) */
+/* ------------------------------------------------------------------- */
+.encabezado-oferta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px 0;
+    border-bottom: 3px solid var(--color-smart-primary);
+    margin-bottom: 30px;
+}
+
+.oferta-banner {
+    background-color: #ff3b30; /* Rojo */
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.oferta-banner h2 {
+    color: white;
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+/* ------------------------------------------------------------------- */
+/* SECCIÓN 2: DETALLES PRINCIPALES (GRID LAYOUT) */
+/* ------------------------------------------------------------------- */
+.detalles-grid {
+    display: grid;
+    /* Grid Layout: Mínimo 280px por columna, 3 columnas posibles */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.grid-item {
+    background-color: var(--color-smart-card-bg);
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+/* ESTILO HORARIOS */
+.lista-horarios {
+    list-style: none;
+    padding: 0;
+}
+.lista-horarios li {
+    margin-bottom: 8px;
+    color: var(--color-smart-text-dark);
+}
+.lista-horarios i {
+    color: var(--color-smart-primary);
+    margin-right: 8px;
+}
+
+/* ESTILO PLANES (FLEXBOX dentro de GRID) */
+.planes-flex {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.tarjeta-plan {
+    flex-grow: 1;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.plan-black { 
+    background-color: var(--color-smart-secondary);
+    color: white; 
+}
+.plan-smart { 
+    background-color: var(--color-smart-background); 
+    border-color: var(--color-smart-primary);
+}
+
+.plan-black i { color: var(--color-smart-primary); }
+.plan-smart i { color: var(--color-smart-secondary); }
+
+/* GALERÍA */
+.item-galeria {
+    grid-column: span 2; 
+}
+.galeria-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* SERVICIOS Y CARACTERÍSTICAS (FLEXBOX) */
+.servicios-listado {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.servicio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    min-width: 100px;
+    text-align: center;
+    background-color: var(--color-smart-background);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+
+.servicio-card i {
+    font-size: 1.8em;
+    color: var(--color-smart-secondary);
+    margin-bottom: 8px;
+}
+
+/* MEDIA QUERY: Ajustes de Responsividad */
+@media (max-width: 768px) {
+    .encabezado-oferta {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .planes-flex {
+        flex-direction: column; 
+    }
+
+    .item-galeria {
+        grid-column: span 1; 
+    }
+}
+
+
+
+
+
+
+/* Menú Mobile */
+.nav-mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inicialmente fuera de la pantalla */
+    width: 300px;
+    height: 100%;
+    background-color: var(--color-blanco);
+    box-shadow: -5px 0 15px var(--color-sombra);
+    z-index: 2000;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    /* ... (otros estilos de caja) ... */
+}
+
+.nav-mobile-menu.open {
+    right: 0; /* Desliza hacia la vista */
+}
+
+
+
+/* Sidebar del Carrito */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Inicialmente fuera de la pantalla */
+    width: 400px;
+    max-width: 90%;
+    height: 100%;
+    background-color: var(--color-blanco);
+    box-shadow: -5px 0 15px var(--color-sombra);
+    z-index: 2000;
+    transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    /* ... (otros estilos de flexbox) ... */
+}
+.cart-sidebar.open {
+    right: 0; /* Desliza hacia la vista */
+}

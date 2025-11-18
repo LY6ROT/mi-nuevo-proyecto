@@ -1,0 +1,171 @@
+/* --- ESTILOS ESPECÍFICOS DE NOSOTROS --- */
+.pagina3 {
+    text-align: center;
+    font-size: 1em;
+    border: 1px solid silver;
+    padding: 15px;
+    background-color:gold;
+    margin-top: 0;
+    font-family: arial;
+    font-weight: 800;
+    border-radius: 10px;
+    margin-right:0;
+    display: flex;
+}
+.fondo4{
+    margin: 0;
+    padding: 100px;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/026/781/389/non_2x/gym-interior-background-of-dumbbells-on-rack-in-fitness-and-workout-room-photo.jpg)
+}
+
+
+/* Estilo para el contenedor principal de la información */
+.contenedor-nosotros {
+    width: 800px;
+    max-width: 90%; /* Responsivo para pantallas pequeñas */
+    margin: 40px auto;
+    padding: 30px 40px;
+    background-color: whitesmoke;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+/* Título principal de la sección */
+.contenedor-nosotros h1 {
+    font-size: 2.0em;
+    text-align: center;
+    color: black;
+    border: 3px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    background-color: seagreen;
+}
+
+/* Subtítulos de las secciones (Misión, Visión, etc.) */
+.contenedor-nosotros h2 {
+    font-size: 1.8em;
+    color: green; /* Color distintivo como en el hover de Contáctenos */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600; /* Hace que el título sea seminegrita */
+
+}
+
+/* Párrafos e Introducción */
+.contenedor-nosotros p {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.introduccion {
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+    color: #000;
+
+}
+
+/* Estilos para la sección de Misión y Visión (usando Flexbox) */
+.mision-vision {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+
+}
+
+.tarjeta-mision, .tarjeta-vision {
+    flex: 1; /* Distribuye el espacio equitativamente */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.mision-vision h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin-top: 0;
+    border-bottom: 3px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Estilos para la lista de beneficios */
+.contenedor-nosotros ul {
+    list-style: none; /* Quitamos los bullets por defecto */
+    padding: 0;
+    background-color: white;
+    border-radius: 0;
+    border: 0;
+
+}
+
+.contenedor-nosotros ul li {
+    background: #e6ffe6; /* Fondo verde muy claro para destacar */
+    margin-bottom: 15px;
+    padding: 15px;
+    border-left: 5px solid green; /* Barra lateral verde */
+    border-radius: 5px;
+    color: black;
+    font-weight: 500;
+
+}
+
+/* Estilo para el párrafo de compromiso */
+.compromiso {
+    background-color: #ffcccc;
+    border-left: 5px solid red;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    color: #555;
+    border-radius: 4px;
+}
+
+/* --- DISEÑO RESPONSIVO --- */
+
+@media (max-width: 768px) {
+    .mision-vision {
+        flex-direction: column; /* Apila las tarjetas verticalmente en móviles */
+    }
+
+    .contenedor-nosotros {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .contenedor-nosotros h1 {
+        font-size: 2em;
+    }
+}
+
+
+/*----------------------------------PIE DE PAGINA -------------------------*/
+.pie {
+    text-align: center;
+    margin-top: 40px;
+    color: black;
+}
+.fondo_pie{
+    background:white;
+    padding: 10px;
+}
+
+.contenedor-redes a {
+    color: black;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.contenedor-redes a:hover {
+    color: green;
+}
+/*----------------------------------*/
+
+
